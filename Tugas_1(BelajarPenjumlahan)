@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class BelajarPenjumlahan{
+  public static void main(String [] args){
+    Scanner scan= new Scanner (System.in);
+      int nilai;
+      int a;
+      int b;
+      int jumlah=0;
+      
+      
+System.out.print("Ingin Belajar Berapa Soal (n)=");
+int n=scan.nextInt();
+
+  for(int i=0; i<n; i++)
+  {
+    
+   a =1+ (int)(Math.random()*9);
+   b =1+ (int)(Math.random()*9);
+   nilai= a + b ; 
+   
+   
+   System.out.print(a+"+"+b+" =");
+   int hasil=scan.nextInt();
+  if(nilai==hasil)
+    jumlah+=10;
+   
+ 
+     
+   
+   }
+  System.out.println("Nilai anda ="+jumlah);
+  }
+  }
