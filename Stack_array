@@ -1,0 +1,76 @@
+import java.io.*;
+import java.util.Scanner;
+public class stack_array
+{
+private int maxsize; //batas maksimum data 
+private int [] stackarray; //array untuk menyimpan stack
+private int top; //indeks array
+ static Scanner input=new Scanner(System.in);
+
+public void inisiasi() //menentukan ukuran kapasitas stack
+{
+System.out.print("masukkan batas stack"); 
+int s = input.nextInt();
+maxsize = s;
+stackarray = new int [maxsize];
+top = -1;
+}
+
+public void push()
+{
+  for(int i = 1; i<=maxsize; i++){
+  if (top<=maxsize-1) {
+  top++;
+  System.out.print("masukkan Stack " + i);
+  int data= input.nextInt();
+stackarray[top] = data;
+System.out.println(data +" Masuk ke Stack");
+}
+
+else
+System.out.println("Stack Penuh.");
+}
+}
+
+public int pop()
+{
+
+ if (top>=0)
+ {
+ int temp = stackarray[top];
+ System.out.println(temp + " Keluar dari Stack");
+ top--;
+ return (temp);
+ }
+ else
+ {
+ System.out.println("Stack Sudah Kosong");
+return(-1);
+ }
+ }
+
+
+public void view()
+{
+System.out.print("Isi Stack: ");
+for(int i=0; i<=top; i++)
+System.out.print(stackarray[i] + " ");
+System.out.println();
+}
+public static void main(String[] args)
+{
+  stack_array stack = new stack_array();
+stack.inisiasi();
+stack.push();
+stack.view();
+stack.pop();
+stack.pop();
+stack.pop();
+stack.view();
+
+
+
+
+
+}
+}
